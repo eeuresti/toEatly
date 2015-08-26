@@ -23,5 +23,28 @@ var foods =[
 
 // ROUTES //
 //get to root should render index.html
+app.get("/", function(req, res){
+  res.sendFile(views + "index.html")
+})
+
+app.get("/foods", function(req, res) {
+    res.send(JSON.stringify(foods));
+})
+
+// food index path
+app.get("/foods", function(req, res){
+  //render foods index JSON
+  res.send(foods);
+})
+
+app.post("/foods", function(req, res){
+  var food = req.body;
+  food.id = foods[foods.length - 1].id + 1;
+  foods.push(food);
+  res.send(food);
+})
 
 //start server on port 3000
+app.listen(3000, function(){
+  console.log("Server running on local host:3000")
+})

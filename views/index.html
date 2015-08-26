@@ -5,23 +5,34 @@
   <meta charset="utf-8" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--scripts -->
+  <!-- jquery -->
+  <script type="text/javascript" src="/vendor/jquery/dist/jquery.min.js"></script>
+  <!-- underscore -->
+  <script type="text/javascript" src="/vendor/underscore/underscore-min.js"></script>
+    <!-- bootstrap -->
+  <script type="text/javascript" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/static/js/app.js"></script>
+ <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
+ <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+
 </head>
 <body>
   <div id="page-wrapper" class="container">
     <header class="page-header">
       <h1>ToEat.ly <small>Put it in my belly!</small></h1>
     </header>
+    <!-- tempelate placeholder -->
+    <!-- form -->
+    <form>
+      <input type="text" name="name" id="food-name-input" placeholder="Food name">
+      <input type="text" name="yumminess" id="food-yumminess-input" placeholder="How yummy?">
+      <button type="submit">Eat me!</button>
+    </form>
+    <ul id ="food-ul"></ul>
   </div>
+  <script type ="text/template" id="food-template">
+    <li> <%= name %> - <%= yumminess %></li>
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
